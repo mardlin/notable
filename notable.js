@@ -25,7 +25,7 @@ if (args.join(' ') == 'clear all') {
   let now = new Date();
   let parts = now.toString().split(' ');
   let date = `${parts[0]}, ${parts[1]} ${parts[[2]]} ${parts[3]} ${parts[4]}`;
-  fs.writeFileSync(location, `${date}\n${args.join(' ')}`);
+  fs.appendFileSync(location, `${date}\n${args.join(' ')}`);
   console.log('note saved');
 } else {
   if (fs.existsSync(location)) {
